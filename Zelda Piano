@@ -1,13 +1,13 @@
 #Universidad del Valle
-#Pablo MÈndez
-#CarnÈ: 19195
+#Pablo M√©ndez
+#Carn√©: 19195
 #Proyecto Sonic Pi
 #The Legend of Zelda Main Theme - Koji Kondo
 #Intrumento: Piano
 
-use_synth :piano #Se tocar· el piano
+use_synth :piano #Se tocar√° el piano
 #La "mano izquierda" en un piano se encarga del rimo
-#Creo funciÛn para ahorrar lÌneas de cÛdigo
+#Creo funci√≥n para ahorrar l√≠neas de c√≥digo
 define :ritmo do |nota1, nota2|
   4.times do
     play nota1
@@ -56,16 +56,16 @@ in_thread do
   end
 end
 
-#La "mano derecha" se encarga de la melodÌa en piano
+#La "mano derecha" se encarga de la melod√≠a en piano
 
-#Creo funciÛn para ahorrar espacio. La negra es 1 tiempo; los corchetes, 0.5
+#Creo funci√≥n para ahorrar espacio. La negra es 1 tiempo; los corchetes, 0.5
 define :tecla do |nota, tiempo|
   play nota, release: tiempo * 0.5
   sleep 0.5 * tiempo
 end
 
-#Un triplet es cuando se tocan tres teclas en un tiempo menor al que deberÌa ser
-#La canciÛn solo tiene tripletes de tres corcheas que duran juntas 1 tiempo
+#Un triplet es cuando se tocan tres teclas en un tiempo menor al que deber√≠a ser
+#La canci√≥n solo tiene tripletes de tres corcheas que duran juntas 1 tiempo
 define :triplet do |primera, segunda, tercera|
   tecla primera, 0.3333
   tecla segunda, 0.3333
